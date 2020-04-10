@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Тест</name>
+    <description>Тест</description>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-A52714-normal">
+      <IconStyle>
+        <color>ff1427a5</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-A52714-highlight">
+      <IconStyle>
+        <color>ff1427a5</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-A52714">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-A52714-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-A52714-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-AFB42B-normal">
+      <IconStyle>
+        <color>ff2bb4af</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-AFB42B-highlight">
+      <IconStyle>
+        <color>ff2bb4af</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-AFB42B">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-AFB42B-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-AFB42B-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Персонал проектный</name>
+      <Placemark>
+        <name>Киданов Сергей Владимирович</name>
+        <address>РОССИЯ, 460006, Оренбургская обл, Оренбург г, Кичигина ул, дом 88</address>
+        <description><![CDATA[Адрес для информирования: РОССИЯ, 460006, Оренбургская обл, Оренбург г, Кичигина ул, дом 88<br>комментарий: Pepsi, Мерчендайзер, +7 (999) 106-13-84]]></description>
+        <styleUrl>#icon-1899-AFB42B</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>РОССИЯ, 460006, Оренбургская обл, Оренбург г, Кичигина ул, дом 88</value>
+          </Data>
+          <Data name="комментарий">
+            <value>Pepsi, Мерчендайзер, +7 (999) 106-13-84</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Захарова Юлия Александровна</name>
+        <address>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1</address>
+        <description><![CDATA[Адрес для информирования: 460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1<br>Наименование: Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ардован Сергей Витальевич</name>
+        <address>РОССИЯ, 677015, Саха /Якутия/ респ, Якутск г, Жорницкого ул, дом 46</address>
+        <description><![CDATA[Адрес для информирования: РОССИЯ, 677015, Саха /Якутия/ респ, Якутск г, Жорницкого ул, дом 46<br>комментарий: MARS Confectionery, Мерчендайзер, +7 (961) 8696005]]></description>
+        <styleUrl>#icon-1899-AFB42B</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>РОССИЯ, 677015, Саха /Якутия/ респ, Якутск г, Жорницкого ул, дом 46</value>
+          </Data>
+          <Data name="комментарий">
+            <value>MARS Confectionery, Мерчендайзер, +7 (961) 8696005</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ваклин Татьяна Евгеньевна</name>
+        <address>Москва г, Митинская ул, дом № 28</address>
+        <description><![CDATA[Адрес для информирования: Москва г, Митинская ул, дом № 28<br>Наименование: BAT Эксклюзив,Аналитик, Отделение "Москва" №3, +7 (985) 485-42-42]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>Москва г, Митинская ул, дом № 28</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аналитик, Отделение "Москва" №3, +7 (985) 485-42-42]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Диденко Маргарита Станиславовна</name>
+        <address>140002, Московская обл, Люберцы г, Кирова ул, дом 7</address>
+        <description><![CDATA[Адрес для информирования: 140002, Московская обл, Люберцы г, Кирова ул, дом 7<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Раменское", +7 (985) 726-68-08]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>140002, Московская обл, Люберцы г, Кирова ул, дом 7</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Раменское", +7 (985) 726-68-08]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Александрова Светлана Сергеевна</name>
+        <address>140202, Московская обл, Воскресенский р-н, Воскресенск г, Московская ул, дом № 8</address>
+        <description><![CDATA[Адрес для информирования: 140202, Московская обл, Воскресенский р-н, Воскресенск г, Московская ул, дом № 8<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Воскресенск", +7 (977) 723-60-93]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>140202, Московская обл, Воскресенский р-н, Воскресенск г, Московская ул, дом № 8</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Воскресенск", +7 (977) 723-60-93]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Данилова Надежда Витальевна</name>
+        <address>140304, Московская обл, городской округ Егорьевск, 2-й мкр., дом № 29</address>
+        <description><![CDATA[Адрес для информирования: 140304, Московская обл, городской округ Егорьевск, 2-й мкр., дом № 29<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (977) 501-71-20]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>140304, Московская обл, городской округ Егорьевск, 2-й мкр., дом № 29</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (977) 501-71-20]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Портнов Евгений Владимирович</name>
+        <address>141302, Московская обл, Сергиево-Посадский р-н, Сергиев Посад -6 г, Лесная ул, дом № 4</address>
+        <description><![CDATA[Адрес для информирования: 141302, Московская обл, Сергиево-Посадский р-н, Сергиев Посад -6 г, Лесная ул, дом № 4<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Сергиев Посад", +7 (926) 371-87-99]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>141302, Московская обл, Сергиево-Посадский р-н, Сергиев Посад -6 г, Лесная ул, дом № 4</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Сергиев Посад", +7 (926) 371-87-99]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Мурина Мария Владимировна</name>
+        <address>141503, Московская обл, Солнечногорск г, Рабочая ул, дом 8</address>
+        <description><![CDATA[Адрес для информирования: 141503, Московская обл, Солнечногорск г, Рабочая ул, дом 8<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (926) 536-78-00]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>141503, Московская обл, Солнечногорск г, Рабочая ул, дом 8</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (926) 536-78-00]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Егорова Юлия Сергеевна</name>
+        <address>141730, Московская обл, городской округ Лобня, Лобня г, Калинина ул, дом 19, корпус Б</address>
+        <description><![CDATA[Адрес для информирования: 141730, Московская обл, городской округ Лобня, Лобня г, Калинина ул, дом 19, корпус Б<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (926) 170-16-96]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>141730, Московская обл, городской округ Лобня, Лобня г, Калинина ул, дом 19, корпус Б</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (926) 170-16-96]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Сушина Яна Николаевна</name>
+        <address>142119, Московская обл, Подольск г, Пахринский проезд, дом № 12</address>
+        <description><![CDATA[Адрес для информирования: 142119, Московская обл, Подольск г, Пахринский проезд, дом № 12<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (926) 338-63-93]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>142119, Московская обл, Подольск г, Пахринский проезд, дом № 12</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (926) 338-63-93]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Троицкая Анжелика Сергеевна</name>
+        <address>142211, Московская обл, Серпухов г, Московское ш, дом № 38</address>
+        <description><![CDATA[Адрес для информирования: 142211, Московская обл, Серпухов г, Московское ш, дом № 38<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (915) 070-88-90]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>142211, Московская обл, Серпухов г, Московское ш, дом № 38</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Москва" №1, +7 (915) 070-88-90]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Арбузов Александр Александрович</name>
+        <address>142500, Московская обл, Павловский Посад г, Павловская ул, дом № 56</address>
+        <description><![CDATA[Адрес для информирования: 142500, Московская обл, Павловский Посад г, Павловская ул, дом № 56<br>Наименование: BAT Эксклюзив,Аудитор , Отделение "Павловский Посад", +7 (916) 480-15-76]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>142500, Московская обл, Павловский Посад г, Павловская ул, дом № 56</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аудитор , Отделение "Павловский Посад", +7 (916) 480-15-76]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ТТ с коорд</name>
+      <Placemark>
+        <name>-, 460014, Оренбургская обл, Оренбург г, Чичерина ул, дом № 2</name>
+        <address>51.7560000000000000000000000, 55.0923000000000000000000000</address>
+        <description><![CDATA[Широта: 51.7560000000000000000000000, 55.0923000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>51.7560000000000000000000000, 55.0923000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677000, Саха /Якутия/ Респ, Якутск г, Богдана Чижика ул, дом № 1</name>
+        <address>62.0435000000000000000000000, 129.7560000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0435000000000000000000000, 129.7560000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0435000000000000000000000, 129.7560000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677000, Саха /Якутия/ Респ, Якутск г, Федора Попова ул, дом № 13, корпус 2</name>
+        <address>62.0443000000000000000000000, 129.7526000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0443000000000000000000000, 129.7526000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0443000000000000000000000, 129.7526000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677001, Саха /Якутия/ Респ, Якутск г, Бестужева-Марлинского ул, дом № 60</name>
+        <address>62.0546000000000000000000000, 129.7548000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0546000000000000000000000, 129.7548000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0546000000000000000000000, 129.7548000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677004, Саха /Якутия/ Респ, Якутск г, 50 лет Советской Армии ул, дом № 33</name>
+        <address>62.0637000000000000000000000, 129.7880000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0637000000000000000000000, 129.7880000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0637000000000000000000000, 129.7880000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677005, Саха /Якутия/ Респ, Якутск г, Лермонтова ул, дом № 60</name>
+        <address>62.0372000000000000000000000, 129.7202000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0372000000000000000000000, 129.7202000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0372000000000000000000000, 129.7202000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677007, Саха /Якутия/ Респ, Якутск г, Пригородный с, Покровский тракт 6 км, дом № 24</name>
+        <address>61.9818000000000000000000000, 129.6876000000000000000000000</address>
+        <description><![CDATA[Широта: 61.9818000000000000000000000, 129.6876000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>61.9818000000000000000000000, 129.6876000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677007, Саха /Якутия/ Респ, Якутск г, Чернышевского ул, дом № 56, корпус 2</name>
+        <address>62.0131000000000000000000000, 129.7215000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0131000000000000000000000, 129.7215000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0131000000000000000000000, 129.7215000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677009, Саха /Якутия/ Респ, Якутск г, Дзержинского ул, дом № 59</name>
+        <address>62.0589000000000000000000000, 129.7398000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0589000000000000000000000, 129.7398000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0589000000000000000000000, 129.7398000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 677013, Саха /Якутия/ Респ, Якутск г, Сергеляхская ул, дом № 2/5</name>
+        <address>62.0210000000000000000000000, 129.7085000000000000000000000</address>
+        <description><![CDATA[Широта: 62.0210000000000000000000000, 129.7085000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>62.0210000000000000000000000, 129.7085000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
