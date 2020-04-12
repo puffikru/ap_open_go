@@ -5,6 +5,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"math"
 	"net/http"
 	"net/url"
@@ -351,10 +352,16 @@ func CreateExcelFile(s_name []string, s_address []string,
 }
 
 func main() {
+	fileName := "open_test2.kml"
+	dir, err := os.Getwd()
+	path := dir + string(os.PathSeparator) + fileName
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	var parser KmlParser
 
-	p := parser.StartParse("/Users/bulahigor/goprojects/open/open_test2.kml")
+	p := parser.StartParse(path)
 
 	data := p.ParseFolder()
 
