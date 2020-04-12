@@ -93,7 +93,7 @@ func ParseFolder(fl Folder) ([]Person, []Store) {
 		if ttype != "" {
 
 			ParsePlacemark(fl.Placemarks[i], ttype, &person, &store)
-			// fmt.Println(person)
+
 			// fmt.Println(store)
 			stores = append(stores, store)
 			persons = append(persons, person)
@@ -146,50 +146,18 @@ func GetCoordinatesByAddress(address string) []string {
 	return coordinates
 }
 
-type CreateItem interface {
-	Create(ttype string, name string, address string, long float64, lat float64, comment string) interface{}
-}
-
-func Create(ttype string, name string, address string, long float64, lat float64, comment string) interface{} {
-	if ttype == "person" {
-		var p Person
-		return p.CreatePerson(ttype, name, address, long, lat)
-	} else if ttype == "store" {
-		var s Store
-		return s.CreateStore(ttype, name, address, long, lat, comment)
-	}
-	return ""
-}
-
-func (p Person) CreatePerson(ttype string, name string, address string, long float64, lat float64) Person {
-	p.Name = name
-	p.Type = ttype
-	p.Address = address
-	p.Long = long
-	p.Lat = lat
-	return p
-}
-
-func (s Store) CreateStore(ttype string, name string, address string, long float64, lat float64, comment string) Store {
-	s.Name = name
-	s.Type = ttype
-	s.Address = address
-	s.Long = long
-	s.Lat = lat
-	s.Comment = comment
-	return s
-}
-
 func ParsePlacemark(pm Placemark, ttype string, p *Person, s *Store) {
-	var name string
+	// Nname := ""
 	var address string
 	coordinates := make(map[string]float64)
-	var comment string
-	// fmt.Println(pm.Name)
+	// Ccomment := ""
+	// fmt.Println(Nname)
+	// fmt.Println(Ccomment)
 	// fmt.Println(pm.Address)
-	if pm.Name != "" {
-		name = pm.Name
-	}
+
+	// if pm.Name != "" {
+	// 	Nname = pm.Name
+	// }
 	if pm.Address != "" {
 		address = pm.Address
 	}
@@ -225,48 +193,41 @@ func ParsePlacemark(pm Placemark, ttype string, p *Person, s *Store) {
 					}
 				}
 			} else if strings.ToLower(pm.ExtendedData[i].Name) == strings.ToLower("Комментарий") {
-				comment = pm.ExtendedData[i].Value
+				// Ccomment = pm.ExtendedData[i].Value
 			}
 		}
 	}
 
 	if len(coordinates) > 0 {
-		var c CreateItem
 		if ttype == "person" {
-			c.Create(ttype, name, address, coordinates["long"], coordinates["lat"], "")
-			// fmt.Println(coordinates)
-			// fmt.Println(name)
-			// fmt.Println(address)
-			p.Name = name
-			p.Address = address
-			p.Long = coordinates["long"]
-			p.Lat = coordinates["lat"]
-			p.Type = "person"
+			// var p Person
+			// defer p.CreatePerson(name, address, coordinates["long"], coordinates["lat"])
+			// nam := "Igor"
+			// defer HelloWorld(nam)
+
+			// p.Name = name
+			// p.Address = address
+			// p.Long = coordinates["long"]
+			// p.Lat = coordinates["lat"]
+			// p.Type = "person"
 		} else if ttype == "store" {
-			c.Create(ttype, name, address, coordinates["long"], coordinates["lat"], comment)
-			s.Name = name
-			s.Address = address
-			s.Comment = comment
-			s.Long = coordinates["long"]
-			s.Lat = coordinates["lat"]
-			s.Type = "store"
+			// var s Store
+			// defer s.CreateStore(name, address, coordinates["long"], coordinates["lat"], comment)
+			// s.Name = name
+			// s.Address = address
+			// s.Comment = comment
+			// s.Long = coordinates["long"]
+			// s.Lat = coordinates["lat"]
+			// s.Type = "store"
 		}
 	}
-	// fmt.Println(p.Long)
-	// fmt.Println(p.Lat)
-	// fmt.Println(p.Name)
-	// fmt.Println(p.Address)
-	// fmt.Printf("%len, %cap", )
-	// fmt.Println(p.Name)
-	// fmt.Println(p.Address)
-	// fmt.Println(p.Long)
-	// fmt.Println(p.Lat)
-	// fmt.Println(p.Type)
-	// fmt.Println(s.Name)
-	// fmt.Println(s.Address)
-	// fmt.Println(s.Long)
-	// fmt.Println(s.Lat)
-	// fmt.Println(s.Type)
+
+	// if ttype == "person" {
+	// 	defer CreatePerson(name, address, coordinates["long"], coordinates["lat"])
+	// } else if ttype == "store" {
+	// 	defer CreateStore(name, address, coordinates["long"], coordinates["lat"], comment)
+	// }
+
 }
 
 func StartParse() {
@@ -298,16 +259,7 @@ func main() {
 	// fmt.Println(dir)
 
 	for i := 0; i < len(document.Document.Folders); i++ {
-		// fmt.Println(document.Document.Folders[i])
 		parser.Persons, parser.Stores = ParseFolder(document.Document.Folders[i])
-		// fmt.Println("Name: " + parser.Stores[i].Name)
-		// fmt.Println("Address: " + parser.Stores[i].Address)
-		// fmt.Println("Coordinates: ", parser.Stores[i].Coordinates)
-		// fmt.Println("Type: ", parser.Type)
-		// fmt.Println("Name: " + parser.Persons[i].Name)
-		// fmt.Println("Address: " + parser.Persons[i].Address)
-		// fmt.Println("Coordinates: ", parser.Persons[i].Coordinates)
-		// fmt.Println("Type: ", parser.Type)
 	}
 
 }
