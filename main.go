@@ -236,7 +236,7 @@ func CreateDataMap(stores []Store, persons []Person, limit int) {
 	var p_address []string
 	for i := 0; i < len(stores); i++ {
 		for j := 0; j < len(persons); j++ {
-			distance := GetDistance(stores[i].Lat, stores[i].Long, persons[j].Lat, persons[j].Long, "M")
+			distance := GetDistance(stores[i].Lat, stores[i].Long, persons[j].Long, persons[j].Lat, "M")
 			if distance <= limit {
 				stores[i].Selected = append(stores[i].Selected, persons[j])
 				persons[j].Selected = append(persons[j].Selected, stores[i])
@@ -371,5 +371,5 @@ func main() {
 
 	data := p.ParseFolder()
 
-	CreateDataMap(data.Stores, data.Persons, 1000)
+	CreateDataMap(data.Stores, data.Persons, 10000)
 }
