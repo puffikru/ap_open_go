@@ -346,7 +346,13 @@ func CreateExcelFile(s_name []string, s_address []string,
 		f.SetCellValue("Sheet1", k, v)
 	}
 
-	if err := f.SaveAs("/Users/bulahigor/goprojects/open/extract_data.xlsx"); err != nil {
+	dir, err := os.Getwd()
+	path := dir + string(os.PathSeparator) + "export_data.xlsx"
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := f.SaveAs(path); err != nil {
 		fmt.Println(err)
 	}
 }
