@@ -5,6 +5,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
+	"math"
 	"net/http"
 	"net/url"
 	"os"
@@ -43,10 +44,11 @@ type KML struct {
 }
 
 type Person struct {
-	Name    string
-	Address string
-	Lat     float64
-	Long    float64
+	Name     string
+	Address  string
+	Lat      float64
+	Long     float64
+	Selected []Store
 }
 
 type Store struct {
@@ -55,6 +57,7 @@ type Store struct {
 	Long     float64
 	Lat      float64
 	Comments string
+	Selected []Person
 }
 
 type KmlParser struct {
@@ -149,17 +152,11 @@ func GetType(pl Placemark) string {
 
 func (p KmlParser) ParseFolder() KmlParser {
 	for i := 0; i < len(p.Folders); i++ {
-		// fmt.Printf("T%\n", p.Folders[0])
-		// fmt.Println(p.Folders[i].XMLName.Local)
 		if p.Folders[i].XMLName.Local == "Folder" {
 			for j := 0; j < len(p.Folders[i].Placemarks); j++ {
-				// fmt.Println(p.Folders[i].Placemarks[j])
 				ttype := GetType(p.Folders[i].Placemarks[j])
 				if ttype == "person" {
-					// fmt.Printf("T%\n", p.Folders[i].Placemarks[j])
-					// res := p.Folders[i].Placemarks[j]
 					p.Persons = append(p.Persons, p.ParsePerson(p.Folders[i].Placemarks[j]))
-					// fmt.Println(p)
 				} else if ttype == "store" {
 					p.Stores = append(p.Stores, p.ParseStore(p.Folders[i].Placemarks[j]))
 				}
@@ -229,56 +226,126 @@ func (p KmlParser) ParseStore(pm Placemark) Store {
 }
 
 func CreateDataMap(stores []Store, persons []Person, limit int) {
+	var s_name []string
+	var s_address []string
+	var s_comment []string
+	var long []float64
+	var lat []float64
+	var p_name []string
+	var p_address []string
+	for i := 0; i < len(stores); i++ {
+		for j := 0; j < len(persons); j++ {
+			distance := GetDistance(stores[i].Lat, stores[i].Long, persons[j].Lat, persons[j].Long, "M")
+			if distance <= limit {
+				stores[i].Selected = append(stores[i].Selected, persons[j])
+				persons[j].Selected = append(persons[j].Selected, stores[i])
 
+				for p := 0; p < len(stores[i].Selected); p++ {
+					s_name = append(s_name, stores[i].Name)
+					s_address = append(s_address, stores[i].Address)
+					s_comment = append(s_comment, stores[i].Comments)
+					long = append(long, stores[i].Long)
+					lat = append(lat, stores[i].Lat)
+					p_name = append(p_name, stores[i].Selected[p].Name)
+					p_address = append(p_address, stores[i].Selected[p].Address)
+				}
+			}
+		}
+	}
+
+	CreateExcelFile(s_name, s_address, s_comment, long, lat, p_name, p_address)
 }
 
-func GetDistance(long1 float64, lat1 float64, long2 float64, lat2 float64) {
-	uri := "https://api.routing.yandex.net/v1.0.0/route"
-	yandex_api := "ea85fc44-fa6f-41db-8dd6-f968590a02fc"
-	l1 := strconv.FormatFloat(long1, 'f', -1, 64)
-	lt1 := strconv.FormatFloat(lat1, 'f', -1, 64)
-	l2 := strconv.FormatFloat(long2, 'f', -1, 64)
-	lt2 := strconv.FormatFloat(lat2, 'f', -1, 64)
-	waypoints := l1 + "," + lt1 + "|" + l2 + "," + lt2
-	// fmt.Println(waypoints)
-	req, err := url.Parse(uri)
-	if err != nil {
-		fmt.Println(err)
-	}
-	params := url.Values{}
-	params.Add("apikey", yandex_api)
-	params.Add("format", "json")
-	params.Add("waypoints", waypoints)
-	req.RawQuery = params.Encode()
+func GetDistance(lat1 float64, lng1 float64, lat2 float64, lng2 float64, unit ...string) int {
+	const PI float64 = 3.141592653589793
 
-	resp, err := http.Get(req.String())
+	radlat1 := float64(PI * lat1 / 180)
+	radlat2 := float64(PI * lat2 / 180)
 
-	if err != nil {
-		fmt.Println(err.Error)
-	}
-	defer resp.Body.Close()
-	body, err2 := ioutil.ReadAll(resp.Body)
-	if err2 != nil {
-		fmt.Println(err2)
-	}
-	var f interface{}
+	theta := float64(lng1 - lng2)
+	radtheta := float64(PI * theta / 180)
 
-	json.Unmarshal(body, &f)
+	dist := math.Sin(radlat1)*math.Sin(radlat2) + math.Cos(radlat1)*math.Cos(radlat2)*math.Cos(radtheta)
+
+	if dist > 1 {
+		dist = 1
+	}
+
+	dist = math.Acos(dist)
+	dist = dist * 180 / PI
+	dist = dist * 60 * 1.1515
+
+	if len(unit) > 0 {
+		if unit[0] == "K" {
+			dist = dist * 1.609344
+		} else if unit[0] == "N" {
+			dist = dist * 0.8684
+		} else if unit[0] == "M" {
+			dist = dist * 1609.34
+		}
+	}
+
+	return int(dist)
 }
 
-func CreateExcelFile(s_name string, s_address string,
-	s_comment string, long float64,
-	lat float64, p_name string, p_address string) {
+func CreateExcelFile(s_name []string, s_address []string,
+	s_comment []string, long []float64,
+	lat []float64, p_name []string, p_address []string) {
+	sname := make(map[string]string)
+	saddress := make(map[string]string)
+	scomment := make(map[string]string)
+	slon := make(map[string]float64)
+	slat := make(map[string]float64)
+	pname := make(map[string]string)
+	paddress := make(map[string]string)
+	for i := 0; i < len(s_name); i++ {
+		index := i + 2
+		iName := "A" + strconv.Itoa(index)
+		iAddress := "B" + strconv.Itoa(index)
+		iComment := "C" + strconv.Itoa(index)
+		iLon := "D" + strconv.Itoa(index)
+		iLat := "E" + strconv.Itoa(index)
+		iPname := "F" + strconv.Itoa(index)
+		iPaddress := "G" + strconv.Itoa(index)
+		sname[iName] = s_name[i]
+		saddress[iAddress] = s_address[i]
+		scomment[iComment] = s_comment[i]
+		slon[iLon] = long[i]
+		slat[iLat] = lat[i]
+		pname[iPname] = p_name[i]
+		paddress[iPaddress] = p_address[i]
+	}
 	f := excelize.NewFile()
-	// Create a new sheet.
-	// index := f.NewSheet("Sheet2")
-	// Set value of a cell.
-	// f.SetCellValue("Sheet2", "A2", "Hello world.")
-	f.SetCellValue("Sheet1", "B2", 100)
-	// Set active sheet of the workbook.
-	// f.SetActiveSheet(index)
-	// Save xlsx file by the given path.
-	if err := f.SaveAs("Book1.xlsx"); err != nil {
+	f.SetCellValue("Sheet1", "A1", "Сеть")
+	f.SetCellValue("Sheet1", "B1", "Адрес")
+	f.SetCellValue("Sheet1", "C1", "Комментарий")
+	f.SetCellValue("Sheet1", "D1", "Широта")
+	f.SetCellValue("Sheet1", "E1", "Долгота")
+	f.SetCellValue("Sheet1", "F1", "ФИО мерча в пределах ... метров")
+	f.SetCellValue("Sheet1", "G1", "Адрес мерча")
+	for k, v := range sname {
+		f.SetCellValue("Sheet1", k, v)
+	}
+	for k, v := range saddress {
+		f.SetCellValue("Sheet1", k, v)
+	}
+	for k, v := range scomment {
+		f.SetCellValue("Sheet1", k, v)
+	}
+	for k, v := range slon {
+		f.SetCellValue("Sheet1", k, v)
+	}
+	for k, v := range slat {
+		f.SetCellValue("Sheet1", k, v)
+	}
+	for k, v := range pname {
+		f.SetCellValue("Sheet1", k, v)
+	}
+	for k, v := range paddress {
+		f.SetCellValue("Sheet1", k, v)
+	}
+
+	if err := f.SaveAs("/Users/bulahigor/goprojects/open/extract_data.xlsx"); err != nil {
 		fmt.Println(err)
 	}
 }
@@ -292,7 +359,4 @@ func main() {
 	data := p.ParseFolder()
 
 	CreateDataMap(data.Stores, data.Persons, 1000)
-	// CreateExcelFile()
-	// fmt.Println(folder)
-	GetDistance(55.734494627139355, 37.68191922355621, 55.733441295701056, 37.59027350593535)
 }
