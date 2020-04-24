@@ -169,6 +169,66 @@
           </Data>
         </ExtendedData>
       </Placemark>
+      <Placemark>
+        <name>Захарова Юлия Александровна</name>
+        <address>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1</address>
+        <description><![CDATA[Адрес для информирования: 460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1<br>Наименование: Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ваклин Юлия Евгеньевна</name>
+        <address>Москва г, Митинская ул, дом № 26</address>
+        <description><![CDATA[Адрес для информирования: Москва г, Митинская ул, дом № 28<br>Наименование: BAT Эксклюзив,Аналитик, Отделение "Москва" №3, +7 (985) 485-42-42]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value></value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[BAT Эксклюзив,Аналитик, Отделение "Москва" №3, +7 (985) 485-42-42]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Захарова Ксения Александровна</name>
+        <description><![CDATA[Адрес для информирования: 460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1<br>Наименование: Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 2</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <address>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 3</address>
+        <description><![CDATA[Адрес для информирования: 460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1<br>Наименование: Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+        <ExtendedData>
+          <Data name="Адрес для информирования">
+            <value>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 3</value>
+          </Data>
+          <Data name="Наименование">
+            <value><![CDATA[Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Захарова Ксения Владимировна</name>
+        <address>460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 4</address>
+        <description><![CDATA[Адрес для информирования: 460056, Оренбургская обл, Оренбург г, Салмышская ул, дом № 1<br>Наименование: Colgate,Мерчендайзер, Отделение "Оренбург" №2, +7 (967) 775-26-77]]></description>
+        <styleUrl>#icon-1899-A52714</styleUrl>
+      </Placemark>
     </Folder>
     <Folder>
       <name>ТТ с коорд</name>
@@ -185,6 +245,70 @@
             <value>ТТ</value>
           </Data>
         </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>-, 460014, Оренбургская обл, Оренбург г, Чичерина ул, дом № 2</name>
+        <address>51.7560000000000000000000000, 55.0923000000000000000000000</address>
+        <description><![CDATA[Широта: 51.7560000000000000000000000, 55.0923000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>51.7560000000000000000000000, 55.0923000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Монделис КАФ_ 0,05 FTE</name>
+        <address>Перекресток, 109390, Москва г, Юных Ленинцев ул, дом № 10, к 1</address>
+        <description><![CDATA[Широта: 55.7770000000000000000000000, 37.6075000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>55.6988, 37.7392</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name></name>
+        <description><![CDATA[Широта: 51.7560000000000000000000000, 55.0923000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>51.7560000000000000000000000, 55.0923000000000000000000000</value>
+          </Data>
+          <Data name="Адрес">
+            <value>Пятерочка, 450511, Москва г, Зеленодольская ул, дом № 1, корпус 1</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            51.756,55.0923
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <address>51.7, 55.092</address>
+        <description><![CDATA[Широта: 51.7560000000000000000000000, 55.0923000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Широта">
+            <value>51.7560000000000000000000000, 55.0923000000000000000000000</value>
+          </Data>
+          <Data name="Комментарий">
+            <value>ТТ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Монделис КАФ_ 0,06 FTE</name>
+        <description><![CDATA[Широта: 51.7560000000000000000000000, 55.0923000000000000000000000<br>Комментарий: ]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
       </Placemark>
     </Folder>
   </Document>
